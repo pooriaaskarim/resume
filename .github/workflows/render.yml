@@ -1,0 +1,125 @@
+name: Render LaTeX Resume
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - 'resume/**'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  # Job 1: Versioning
+  versioning:
+    runs-on: ubuntu-latest
+    outputs:
+      new_tag: ${{ steps.set_tag.outputs.NEW_TAG }}  # Output the new tag for other jobs
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Fetch all tags
+        run: git fetch --tags
+
+      - name: Get latest tag
+        id: get_latest_tag
+        run: |
+          LATEST_TAG=$(git ls-remote --tags --sort=committerdate | grep -oi 'V.*' | tail -1)
+          echo "LATEST_TAG=$LATEST_TAG" >> $GITHUB_ENV
+
+      - name: Determine version number
+        id: determine_version
+        run: |
+          if [ -z "${{ env.LATEST_TAG }}" ]; then
+            VERSION=1
+          else
+            VERSION=$(echo ${{ env.LATEST_TAG }} | sed 's/V\([0-9]*\)\..*/\1/')
+            VERSION=$((VERSION + 1))
+          fi
+          echo "VERSION=$VERSION" >> $GITHUB_ENV
+
+      - name: Generate new version tag
+        id: set_tag
+        run: |
+          NEW_TAG="V${{ env.VERSION }}.$(date +'%y')$(date +'%b' | tr '[:lower:]' '[:upper:]')$(date +'%d')"
+          echo "NEW_TAG=$NEW_TAG" >> $GITHUB_ENV
+          echo "NEW_TAG=$NEW_TAG" >> $GITHUB_OUTPUT
+
+      - name: Display new version tag
+        run: |
+          echo "Generated new version tag: ${{ steps.set_tag.outputs.NEW_TAG }}"
+
+  # Job 2: Rendering
+  rendering:
+    needs: versioning
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Cache TeX Live
+        uses: actions/cache@v4
+        with:
+          path: /var/cache/apt/archives
+          key: ${{ runner.os }}-apt-cache
+          restore-keys: |
+              ${{ runner.os }}-texlive
+
+      - name: Install TeX Live
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: sudo apt-get update && sudo apt-get install -y texlive-full
+
+      - name: Compile LaTeX resume
+        run: |
+          cd resume
+          pdflatex resume.tex
+
+      - name: Rename PDF
+        run: mv resume/resume.pdf resume/PooriaAskariMoqaddam.resume.pdf
+
+      - name: Upload PDF Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: resume-pdf
+          retention-days: 7
+          if-no-files-found: error
+          path: resume/PooriaAskariMoqaddam.resume.pdf
+
+  # Job 3: Release
+  release:
+    needs: [versioning, rendering]  # This job depends on both the versioning and rendering jobs
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Download PDF Artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: resume-pdf
+          path: .
+
+      - name: Set up GitHub CLI
+        run: |
+          echo "${{ secrets.GITHUB_TOKEN }}" | gh auth login --with-token
+
+      - name: Create and Push Git Tag
+        run: |
+          git tag "${{ needs.versioning.outputs.new_tag }}"
+          git push origin "${{ needs.versioning.outputs.new_tag }}"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Create Release and Upload PDF
+        run: |
+          gh release create "${{ needs.versioning.outputs.new_tag }}" PooriaAskariMoqaddam.resume.pdf -t "${{ needs.versioning.outputs.new_tag }}" -n "Automated release for ${{ needs.versioning.outputs.new_tag }}"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Cleanup Generated Files
+        run: |
+          rm -f resume/PooriaAskariMoqaddam.resume.pdf
+          rm -f resume/*.aux resume/*.log resume/*.out resume/*.fls resume/*.pdf
