@@ -84,10 +84,11 @@
 %----------------------------------------------------------------------------------------
 
 \usepackage[dvipsnames]{xcolor}
-\definecolor{pantonegray}{RGB}{66, 67, 72}
+\definecolor{pantonegray}{RGB}{61, 61, 61}
+% \definecolor{pantonegray}{RGB}{66, 67, 72}
 \definecolor{darkgray}{RGB}{52 ,52, 52}
 \definecolor{bluegray}{RGB}{74, 97, 113}
-
+\definecolor{backgound}{RGB}{236, 233, 225}
 
 %----------------------------------------------------------------------------------------
 %	HYPERLINKS
@@ -99,6 +100,7 @@
     linkcolor=bluegray,
     filecolor=bluegray,      
     urlcolor=bluegray,
+    pdftitle={PooriaAskarim.Resume},
     pdfpagemode=FullScreen,
 }
 
@@ -113,9 +115,17 @@
 % Define a new command to create a chip-like shape with text inside a colored box
 \newcommand{\chip}[2][bluegray]{
     \tikz[baseline]{
-        \node[rounded corners=4pt, fill=#1!70, inner sep=3.5pt] {\footnotesize \textcolor{white}{\textbf{#2}}};
+        \node[minimum height=6mm, rounded corners=8pt, fill=#1!70, inner sep=3.5pt] {\footnotesize \textcolor{white}{{#2}}};
     }
 }
+% Define a new command to create a bigger chip-like shape with text inside a colored box
+\newcommand{\bigChip}[2][bluegray]{
+    \tikz[baseline]{
+        \node[minimum height=7mm, rounded corners=10pt, fill=#1!70, inner sep=5pt] {\textcolor{white}{\small\textbf{#2}}};
+    }
+}
+
+
 \newcommand{\pdot}[1][1pt]{
     \tikz\draw[fill=pantonegray,draw=pantonegray] (0,0) circle (#1);
 }
