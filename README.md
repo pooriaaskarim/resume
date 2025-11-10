@@ -29,5 +29,5 @@
 
 ---
 
-_This repository hosts the LaTeX source and rendered PDF of my professional resume,  
+_This repository hosts the LaTeX source and rendered PDF of my resume,  
 updated as work evolves._
