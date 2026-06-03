@@ -184,15 +184,13 @@
 
 % Defines the rSection environment for the major sections within the CV
 \newenvironment{rSection}[1]{ % The single parameter is for the section title
-	\smallskip % Vertical whitespace
+	\medskip % Vertical whitespace
 	\MakeUppercase{\textbf{#1}} % Section title
-	\smallskip % Vertical whitespace
+	\medskip % Vertical whitespace
 	\hrule % Horizontal rule
 	\begin{list}{}{ % List to indent the entire content of the section
 		\setlength{\leftmargin}{12pt}
-		\setlength{\topsep}{2pt}
-		\setlength{\partopsep}{0pt}
-		\setlength{\parsep}{0pt}
+		% \setlength{\rightmargin}{8pt}
 	}
  
 	\item[] % Empty list item to enable indentation
@@ -210,12 +208,12 @@
 		\\ % Job title and location on a new line
 		\textit{#3} \hfill \textit{#4} % Output job title and location
 	}%
-	\vspace{2pt} % Tight vertical whitespace
+	\smallskip % Vertical whitespace
 	\begin{list}
         {$\pdot$}
-        {\leftmargin=16pt\setlength{\topsep}{0pt}\setlength{\partopsep}{0pt}\setlength{\parsep}{0pt}}
+        {\leftmargin=16pt}
 		      \setlength{\itemsep}{-0.5em} \vspace{-0.5em} % Reduce vertical spacing between items in the list for a tighter look
     }{  
 	   \end{list}
-	   \vspace{0.25em} % Vertical whitespace after the end of the list  
+	   \vspace{0.5em} % Vertical whitespace after the end of the list  
     }
