@@ -44,6 +44,7 @@
 
 \usepackage[sfdefault]{roboto}
 \usepackage[T1]{fontenc}
+\usepackage{fontawesome}
 
 
 %----------------------------------------------------------------------------------------
@@ -52,31 +53,21 @@
 
 \usepackage{geometry} % Required for adjusting page dimensions and margins
 \geometry{
-	top=48pt, % Top margin
-	bottom=48pt, % Bottom margin
-	left=48pt, % Left margin
-	right=48pt, % Right margin
-	%showframe, % Uncomment to show how the type block is set on the page
+	top=36pt,    % Symmetric top margin (header is body content, not fancyhdr)
+	bottom=36pt,
+	left=48pt,
+	right=48pt,
+	nohead,      % No space reserved for header on any page
+	nofoot,      % No space reserved for footer on any page
+	%showframe,  % Uncomment to show how the type block is set on the page
 }
 
 %----------------------------------------------------------------------------------------
 %	PAGESTYLE
 %----------------------------------------------------------------------------------------
 
-% \pagestyle{empty}
-\usepackage{fancyhdr} % Used for headers and footers
-\pagestyle{fancy}
-\fancyhf{}
-\fancypagestyle{}{}
-\fancyhead[L]{
-\begingroup
-\printName \\
-\printSubtitle
-\endgroup
-}
-\fancyfoot[C]{\printInfo}
-% \renewcommand{\headrulewidth}{0pt} % Remove header rule
-% \renewcommand{\footrulewidth}{0pt} % Remove footer rule
+% No headers or footers on any page — header is rendered as body content via \makeheader
+\pagestyle{empty}
 
 
 %----------------------------------------------------------------------------------------
@@ -84,8 +75,7 @@
 %----------------------------------------------------------------------------------------
 
 \usepackage[dvipsnames]{xcolor}
-\definecolor{pantonegray}{RGB}{61, 61, 61}
-% \definecolor{pantonegray}{RGB}{66, 67, 72}
+\definecolor{pantonegray}{RGB}{66, 67, 72}
 \definecolor{darkgray}{RGB}{52 ,52, 52}
 \definecolor{bluegray}{RGB}{74, 97, 113}
 \definecolor{backgound}{RGB}{236, 233, 225}
@@ -113,16 +103,16 @@
 \usetikzlibrary{shapes, positioning}
 
 % Define a new command to create a chip-like shape with text inside a colored box
-\newcommand{\chip}[2][bluegray]{
-    \tikz[baseline]{
-        \node[minimum height=6mm, rounded corners=8pt, fill=#1!70, inner sep=3.5pt] {\footnotesize \textcolor{white}{{#2}}};
-    }
+\newcommand{\chip}[2][bluegray]{%
+    \tikz[baseline]{%
+        \node[rounded corners=4pt, fill=#1!70, inner sep=3.5pt] {\footnotesize \textcolor{white}{\textbf{#2}}};%
+    }\hspace{3pt}%
 }
 % Define a new command to create a bigger chip-like shape with text inside a colored box
-\newcommand{\bigChip}[2][bluegray]{
-    \tikz[baseline]{
-        \node[minimum height=7mm, rounded corners=10pt, fill=#1!70, inner sep=5pt] {\textcolor{white}{\small\textbf{#2}}};
-    }
+\newcommand{\bigChip}[2][bluegray]{%
+    \tikz[baseline]{%
+        \node[minimum height=7mm, rounded corners=10pt, fill=#1!70, inner sep=5pt] {\textcolor{white}{\small\textbf{#2}}};%
+    }\hspace{5pt}%
 }
 
 
@@ -137,45 +127,41 @@
 
 \newcommand{\name}[1]{\renewcommand{\name}{#1}} % Defines the \name command to set the user's name
 
-\newcommand{\subtitle}[1]      {\def \@subtitle{#1}}
-
+\newcommand{\subtitle}[1]   {\def \@subtitle{#1}}
 \newcommand{\email}[1]      {\def \@email{#1}}
 \newcommand{\phone}[1]      {\def \@phone{#1}}
 \newcommand{\address}[1]    {\def \@address{#1}}
 \newcommand{\linkedin}[1]   {\def \@linkedin{#1}}
 \newcommand{\github}[1]     {\def \@github{#1}}
 
-% \printName is used to output the user's name in a large size
-\newcommand{\printName}{
-	\begingroup
-		\textcolor{pantonegray}{\MakeUppercase{\huge\bfseries\name}}\hfil % Style and output the user's name
-		% \bigskip % Vertical whitespace below name
-	\endgroup
-}
-
-% \printSubtitle is used to output the user's Subtitle in a small size
-\newcommand{\printSubtitle}{
-	\begingroup
-		\textcolor{pantonegray}{\MakeUppercase{\small\bfseries\@subtitle}}\hfil % Style and output the user's subtitle
-		\smallskip % Vertical whitespace below subtitle
-	\endgroup
-}
-
-
-% \printInfo is used to style an info line (provided in the single parameter to the command)
-\usepackage{fontawesome}
-\newcommand{\printInfo}{
-	  \color{bluegray}
-   \begingroup
-        \hrule
-        \bigskip
-		\centerline{\makebox[0pt][r]{\@phone}{\hspace{8pt}}{\faPhone} \hspace{4pt} \pdot \hspace{10pt} {\faEnvelope}{\hspace{8pt}}\makebox[0pt][l]{\@email}}
-	    \centerline{\makebox[0pt][r]{\@github}{\hspace{5pt}}{\faGithubAlt} \hspace{4pt} \pdot \hspace{10pt} {\faLinkedin}{\hspace{8pt}}\makebox[0pt][l]{\@linkedin}}
-        \smallskip
-        \centerline{\textcolor{bluegray}{\textbf{{\@address}}}}
- \endgroup
-	\par % End the paragraph to ensure correct spacing between lines
-	\smallskip % Vertical whitespace between info lines
+% \makeheader renders the unified letterhead block as body content on page 1.
+% Layout:
+%   Row 1 (identity) : name (Large) left  ·  subtitle right
+%   Row 2 (contact)  : phone left  ·  email right
+%   Row 3 (profiles) : linkedin left  ·  address center  ·  github right
+% Followed by a pantonegray separator rule.
+\newcommand{\makeheader}{%
+  \begingroup
+  \leftskip=0pt\rightskip=0pt\parindent=0pt\parfillskip=0pt
+  % Identity row
+  \begin{tabular*}{\textwidth}{@{} l @{\extracolsep{\fill}} r @{}}
+    \textcolor{pantonegray}{\MakeUppercase{\Large\bfseries\name}} &
+    \textcolor{pantonegray}{\MakeUppercase{\small\bfseries\@subtitle}} \\
+  \end{tabular*}\par\vspace{2pt}%
+  % Contact rows
+  {\color{bluegray}\footnotesize%
+  \renewcommand{\arraystretch}{1.2}%
+  \begin{tabular*}{\textwidth}{@{} l @{\extracolsep{\fill}} r @{}}
+    \faPhone\hspace{3pt}\@phone & \@email\hspace{3pt}\faEnvelope \\
+  \end{tabular*}\par\vspace{-2pt}%
+  \begin{tabular*}{\textwidth}{@{} l @{\extracolsep{\fill}} c @{\extracolsep{\fill}} r @{}}
+    \faLinkedin\hspace{3pt}\@linkedin & \@address & \@github\hspace{3pt}\faGithubAlt \\
+  \end{tabular*}\par
+  }%
+  \vspace{5pt}%
+  {\color{pantonegray}\hrule height 0.4pt}%
+  \vspace{8pt}%
+  \endgroup
 }
 
 %----------------------------------------------------------------------------------------
@@ -184,13 +170,16 @@
 
 % Defines the rSection environment for the major sections within the CV
 \newenvironment{rSection}[1]{ % The single parameter is for the section title
-	\medskip % Vertical whitespace
+	\vskip 2pt % Vertical whitespace
 	\MakeUppercase{\textbf{#1}} % Section title
-	\medskip % Vertical whitespace
+	\vskip 2pt % Vertical whitespace
 	\hrule % Horizontal rule
 	\begin{list}{}{ % List to indent the entire content of the section
 		\setlength{\leftmargin}{12pt}
-		% \setlength{\rightmargin}{8pt}
+		\setlength{\topsep}{0pt}
+		\setlength{\partopsep}{0pt}
+		\setlength{\parsep}{0pt}
+		\setlength{\itemsep}{0pt}
 	}
  
 	\item[] % Empty list item to enable indentation
@@ -208,12 +197,16 @@
 		\\ % Job title and location on a new line
 		\textit{#3} \hfill \textit{#4} % Output job title and location
 	}%
-	\smallskip % Vertical whitespace
+	\vskip 1pt % Vertical whitespace
 	\begin{list}
         {$\pdot$}
-        {\leftmargin=16pt}
-		      \setlength{\itemsep}{-0.5em} \vspace{-0.5em} % Reduce vertical spacing between items in the list for a tighter look
+        {\leftmargin=16pt
+         \setlength{\itemsep}{-0.5em}
+         \setlength{\topsep}{0pt}
+         \setlength{\partopsep}{0pt}
+         \setlength{\parsep}{0pt}
+         \vspace{-0.5em}}
     }{  
 	   \end{list}
-	   \vspace{0.5em} % Vertical whitespace after the end of the list  
+	   \vskip 1pt % Vertical whitespace after the end of the list  
     }
