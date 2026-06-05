@@ -24,7 +24,7 @@
 %------------------------------------------------
 
 \name{Pooria Askari Moqaddam} % Your name to appear at the top
-\subtitle{Software Developer}  % Your subtitle description to appear at the top
+\subtitle{Software Engineer}  % Your subtitle description to appear at the top
 
 
 \email{\href{mailto:pooriaaskarim@gmail.com}{pooriaaskarim@gmail.com}}
@@ -40,11 +40,29 @@
 \raggedright
 
 %----------------------------------------------------------------------------------------
-%	Brief
+%	Profile
 %----------------------------------------------------------------------------------------
 
-\begin{rSection}{Brief}
-\textbf{Systems-minded Software Engineer} specializing in cross-platform development and system architectures using \textbf{Flutter/Dart} and \textbf{Python}. Focused on building high-performance systems and developer tooling---with practical experience in custom rendering engines, memory optimization, and modular architectures. Committed to designing clean, self-documenting codebases that empower teams to scale with minimal technical friction.
+\begin{rSection}{Profile}
+\smallskip
+I am a cross-platform developer with a strong inclination toward systems thinking---I find genuine satisfaction in understanding how things work at a deeper level and finding ways to make them work better. I have led small development teams and learned firsthand that great software is rarely a solo endeavor; the quality of what a team builds is inseparable from the quality of how it communicates. I care about both sides of that equation: writing clean, well-reasoned code and fostering the kind of engineering culture where good ideas can surface and thrive. I still have a lot to learn, and that is precisely what keeps me motivated.
+\end{rSection}
+
+%----------------------------------------------------------------------------------------
+%	Brief Overview
+%----------------------------------------------------------------------------------------
+
+\begin{rSection}{Brief Overview}
+\smallskip
+My \hyperlink{experience}{\textbf{professional work}} spans roughly five years in software---real-time financial data systems, CRM applications, large-scale ERP platforms, and Linux infrastructure. Before that, I spent several years as a hardware technician and network administrator: component-level diagnostics and repairs, local network deployment, and server provisioning. That background still informs how I think about software.
+
+In parallel, I have been building \hyperlink{opensource}{\textbf{open source developer tooling}} — both projects accumulated over years of real engineering work before taking their current shape:
+\begin{list}{$\pdot$}{\leftmargin=12pt \itemsep=0.1em \parsep=0pt \topsep=2pt}
+    \item \textbf{Logd} --- a hierarchical logging engine for Dart/Flutter. Loggers are organized in a dot-separated tree with lazy config resolution, version-based cache invalidation, and atomic multi-line buffering. A fail-safe internal pipeline ensures logging failures are never surfaced as application errors.
+    \item \textbf{Flutter Notification Queue} --- a full overlay-based notification system for Flutter. Manages notifications as stateful, interactive entities through a channel-based queue architecture with 8 positional slots, drag-to-relocate, backpressure handling, and smooth gesture interactions.
+\end{list}
+
+A full breakdown of my \hyperlink{skills}{\textbf{technical skills}} follows directly below, with \hyperlink{education}{\textbf{academic background}} at the end---the latter spanning electrical engineering and computer science, a combination that largely explains the rest of this document.
 \end{rSection}
 
 %----------------------------------------------------------------------------------------
@@ -52,23 +70,80 @@
 %----------------------------------------------------------------------------------------
 
 \begin{rSection}{Skills}
-    \renewcommand{\arraystretch}{1.2}%
+    \hypertarget{skills}{}
+    \smallskip
+    \renewcommand{\arraystretch}{1.5}%
 	\begin{tabular}{@{} >{\bfseries}l @{\hspace{8pt}} l @{}}
             Technologies &
-                \chip{Dart}\chip{Python}\chip{Kotlin}\chip{Docker}\chip{Linux-based Systems} \\
+                \bigChip{Dart}\bigChip{Python}\bigChip{Kotlin}\bigChip{Docker}\bigChip{Linux} \\
             
-            Tools &
-                \chip{Flutter}\chip{BLoC}\chip{Riverpod}\chip{GetX}\chip{RxDart}\chip{Provider}  \\
-                &  \chip{Firebase APIs}\chip{OpenStreetMaps API}\chip{Google Console APIs}\chip{Azure}\chip{Figma} \\   
+            Tools \& APIs &
+                \bigChip{Flutter}\bigChip{BLoC}\bigChip{Riverpod}\bigChip{GetX}\bigChip{RxDart} \\
+                &  \bigChip{Provider}\bigChip{Firebase APIs}\bigChip{OpenStreetMaps API} \\   
+                &  \bigChip{Google Console APIs}\bigChip{Azure}\bigChip{Figma} \\
 
-            Industrial Knowledge &
-                \chip{Domain-Driven Design}\chip{Software Architecture}\chip{Design Patterns} \\
-		          
-                &  \chip{Clean Code}\chip{SOLID}\chip{OOP}\chip{Agile/Scrum}\chip{CI/CD} \\
+            Practices &
+                \bigChip{Domain-Driven Design (DDD)}\bigChip{Software Architecture} \\
+                &  \bigChip{Design Patterns}\bigChip{Clean Code}\bigChip{SOLID}\bigChip{OOP} \\
+                &  \bigChip{Agile/Scrum}\bigChip{CI/CD} \\
             Databases &
-                \chip{Hive}\chip{Isar}\chip{Redis}\chip{MySQL} \\
+                \bigChip{Redis}\bigChip{Hive}\bigChip{Isar}\bigChip{MySQL} \\
 	\end{tabular}
 \end{rSection}
+
+\newpage
+
+%----------------------------------------------------------------------------------------
+%	WORK EXPERIENCE SECTION
+%----------------------------------------------------------------------------------------
+
+\begin{rSection}{Professional Experience}
+\hypertarget{experience}{}
+\smallskip
+%------------------------------------------------
+    \begin{rSubsection}{Rahandaaz}{2024 - 2025}{Software Developer}{Shiraz, Iran}
+		\item Led a cross-functional team of developers, designers, and business stakeholders, translating complex requirements into modular domain architectures using \textbf{Domain-Driven Design (DDD)} principles.
+		\item Redesigned codebase architecture and developer workflows to resolve cross-team communication bottlenecks, aligning product UX designs with engineering practices.
+        \\ \chip{Flutter} \chip{GetX} \chip{Hive} \chip{Kotlin} \chip{DDD} \chip{Figma} \chip{Firebase} \chip{Agile/Scrum}
+	\end{rSubsection}
+
+	\begin{rSubsection}{Didehban Tejarat}{2023 - 2024}{Front-end Developer}{Shiraz, Iran}
+		\item Led front-end development of a \textbf{CRM application}, collaborating with cross-functional product teams to deliver \textbf{responsive interfaces} and localized components.
+		\item Developed and maintained inter-team \textbf{code quality guidelines} to streamline onboarding and code reviews.
+		\item Automated containerized staging environments and deployment pipelines using \textbf{Docker} and \textbf{GitHub Actions} workflows, streamlining release cycles and eliminating manual configuration.
+        \\ \chip{Flutter} \chip{GetX} \chip{Hive} \chip{OpenStreetMaps} \chip{Firebase} \chip{Docker}
+	\end{rSubsection}
+
+	\begin{rSubsection}{Chartix}{2022 - 2023}{Software Developer}{Shiraz, Iran}
+		\item Developed the client-side ecosystem, engineering a native \textbf{Android application}, a responsive \textbf{PWA}, and an interactive \textbf{Telegram Bot} to unify access to financial services.
+		\item Engineered a reliable data collection and caching pipeline utilizing \textbf{Redis}, implementing service health monitoring to ensure high availability and prevent data loss during high-volume market activity.
+		\item Optimized UI state-management and rendering layers in Flutter to achieve \textbf{high-FPS chart interactions} (zooming, panning) and eliminate UI thread blocking from high-frequency WebSocket ticks.
+        \\ \chip{Flutter} \chip{Python} \chip{BloC} \chip{Hive} \chip{Socket} \chip{Redis} \chip{TelegramAPI}
+	\end{rSubsection}
+
+	\begin{rSubsection}{FepCo}{2021 - 2022}{Junior Front-end Developer}{Shiraz, Iran}
+		\item Practiced \textbf{Agile/Scrum} methodologies in a collaborative environment, developing a modular, large-scale \textbf{ERP software}.
+		\item Developed proficiency in \textbf{Dart} and \textbf{Flutter} architectures, implementing \textbf{Clean Code}, \textbf{Domain-Driven Design (DDD)} principles, \textbf{state/route management}, and \textbf{localization}.
+		\item Collaborated with design teams on \textbf{UI/UX workflows} to optimize user experience and layout fidelity.
+        \\ \chip{Flutter} \chip{Dart} \chip{GetX} \chip{Clean Code} \chip{DDD} \chip{Scrum} \chip{UI/UX}
+	\end{rSubsection}
+
+
+	\begin{rSubsection}{Diakoo}{2019 - 2020}{System Administrator}{Shiraz, Iran}
+		\item Configured and maintained \textbf{Linux/Windows server} environments optimized for hosting \textbf{Java-based} enterprise applications.
+		\item Provisioned and maintained \textbf{VoIP} telecommunication servers and directory services.
+		\item Collaborated with developers to design and implement a secure \textbf{video streaming service} with token-based access control and download protection.
+        \\ \chip{Linux} \chip{Windows Server} \chip{VoIP} \chip{Bash} \chip{Systems Administration} \chip{Java} \chip{Video Streaming}
+	\end{rSubsection}
+
+	\begin{rSubsection}{IT Support \& Network Services}{2014 - 2019}{Hardware Technician \& Network Administrator}{Shiraz, Iran}
+		\item Performed \textbf{component-level diagnostics}, motherboard repairs, and hardware upgrades for desktops, laptops, network equipment, and power supply systems.
+		\item Deployed local \textbf{network infrastructures}, configured active switches/routers, and maintained power backups (\textbf{UPS}).
+        \\ \chip{Hardware Diagnostics} \chip{Component Repair} \chip{Network Configuration} \chip{Troubleshooting}
+	\end{rSubsection}
+%------------------------------------------------
+\end{rSection}
+
 
 
 %----------------------------------------------------------------------------------------
@@ -76,25 +151,27 @@
 %----------------------------------------------------------------------------------------
 
 \begin{rSection}{Open Source Projects}
+\hypertarget{opensource}{}
+\smallskip
 %------------------------------------------------
     \begin{rSubsection}{Logd}{2025 - Present}{Creator}{BSD 3-Clause 
 		\\ {\footnotesize\textcolor{bluegray}{\faGithubAlt~\href{https://github.com/pooriaaskarim/logd}{pooriaaskarim/logd} $\cdot$ \faCube~\href{https://pub.dev/packages/logd}{pub.dev/packages/logd}}}}
-		\item[] {\small\textit{A Dart/Flutter logging library built on the conviction that log records are structured data---not strings---deserving a proper layout engine, binary IR, and zero-GC-overhead memory model.}}
-		\item Created a high-performance logging library for \textbf{Dart/Flutter} featuring a custom \textbf{binary serialization} format.
-		\item Designed a custom memory manager (\textbf{Arena allocator}) to eliminate garbage collection overhead during high-frequency log streams.
-		\item Built a physical \textbf{terminal renderer} supporting cell-aware multi-line alignment and ANSI/JSON syntax highlighting.
-		\item Implemented native bindings using \textbf{Dart FFI} to integrate the core serialization engine with platform-native code.
-        \\ \chip{Binary Serialization} \chip{Arena Memory Pooling} \chip{Zero-Copy Rendering} \chip{Dart FFI} \chip{Terminal Layout Engine}
+		\item[] {\small\textit{A Dart/Flutter logging library built on the conviction that log records are structured data, deserving a proper IR, a real layout engine, and zero pressure on the garbage collector.}}
+		\item Modeled the logging pipeline as a two-stage system: a semantic IR (\textbf{LogDocument}) that captures structure, followed by a physical layout pass (\textbf{TerminalLayout}) that resolves cell-aware multi-line alignment before any output is written.
+		\item Designed a \textbf{LIFO object pool} (Arena) covering all IR node types and native memory buffers---eliminating per-log allocations and GC churn under high-frequency streams.
+		\item Implemented a \textbf{hybrid execution mode}: Object Mode preserves the full decorator pipeline via tree traversal; Streaming Mode writes directly to native Binary IR buffers for a measured 20$\times$ throughput gain.
+		\item Integrated \textbf{Dart FFI} to dispatch serialized Binary IR packets to a background isolate, with backpressure capping at 200 in-flight packets and a 128\,MB native memory ceiling.
+        \\ \chip{Semantic IR} \chip{Arena Object Pool} \chip{Binary IR / FFI} \chip{Hybrid Rendering} \chip{Terminal Layout Engine}
 	\end{rSubsection}
 
     \begin{rSubsection}{Flutter Notification Queue}{2025 - Present}{Creator}{BSD 3-Clause 
 		\\{\footnotesize\textcolor{bluegray}{\faGithubAlt~\href{https://github.com/pooriaaskarim/flutter_notification_queue}{pooriaaskarim/flutter\_notification\_queue} $\cdot$ \faCube~\href{https://pub.dev/packages/flutter_notification_queue}{pub.dev/packages/flutter\_notification\_queue}}}}
-		\item[] {\small\textit{A Flutter overlay system built on the premise that notifications are live agents---not ephemeral banners---capable of competing for priority, responding to gestures, and yielding under backpressure.}}
-		\item Developed a non-blocking notification manager for \textbf{Flutter} using custom overlay layers and \textbf{gesture interaction physics}.
-		\item Designed a gesture routing system using a \textbf{state-machine pattern} and built a priority queue to manage notification backpressure.
-		\item Built a \textbf{reactive event bus} to synchronize overlay states and transition animations across decoupled widgets.
-		\item Created a comprehensive \textbf{integration test suite} to validate complex asynchronous lifecycles and eliminate test flakiness.
-        \\ \chip{FSM Gesture Engine} \chip{Spring Physics} \chip{Event Queues} \chip{Reactive Architecture} \chip{Deterministic Testing}
+		\item[] {\small\textit{A Flutter overlay system built on the premise that notifications are live agents---capable of competing for priority, responding to gestures, and yielding under backpressure---not ephemeral banners.}}
+		\item Architected a \textbf{QueueCoordinator} as the lifecycle bridge between logical queue operations and Flutter's \texttt{OverlayPortal}, using a startup-mailbox pattern to handle pre-mount enqueue requests without race conditions.
+		\item Implemented a \textbf{modular gesture FSM} where each interaction (drag-to-dismiss, drag-to-relocate, reorder) is an independent plugin, routed by state machine rather than nested conditional logic.
+		\item Exposed a \textbf{broadcast event stream} (queued, dismissed, relocated, reordered, overflowed) that decouples observers from library internals and supports multiple simultaneous listeners.
+		\item Built queue overflow as a \textbf{first-class event} rather than a silent drop---backpressure propagates to the caller, keeping the notification lifecycle fully observable.
+        \\ \chip{FSM Gesture Engine} \chip{OverlayPortal} \chip{Reactive Event Bus} \chip{Backpressure} \chip{Deterministic Testing}
 	\end{rSubsection}
 
     % \begin{rSubsection}{SarvMD}{2026 - Present}{Creator}{BUSL-1.1 \enspace {\footnotesize\textcolor{bluegray}{\faGithubAlt~\href{https://github.com/pooriaaskarim/sarvmd}{pooriaaskarim/sarvmd}}}}
@@ -108,57 +185,18 @@
 \end{rSection}
 
 
-%----------------------------------------------------------------------------------------
-%	WORK EXPERIENCE SECTION
-%----------------------------------------------------------------------------------------
-
-\newpage
-\begin{rSection}{Professional Experience}
-%------------------------------------------------
-    \begin{rSubsection}{Rahandaaz}{2024 - 2025}{Lead Software Developer}{Shiraz, Iran}
-		\item Led a cross-functional team of developers, designers, and business stakeholders to architect modular client systems using \textbf{Domain-Driven Design (DDD)} principles.
-		\item Redesigned the core application architecture, resolving rendering bottlenecks to achieve a stable \textbf{60 FPS} UI and reduce client-side memory usage.
-        \\ \chip{Flutter} \chip{GetX} \chip{Hive} \chip{Kotlin} \chip{DDD} \chip{Figma} \chip{Firebase} \chip{Agile/Scrum}
-	\end{rSubsection}
-
-	\begin{rSubsection}{Didehban Tejarat}{2023 - 2024}{Software Engineer (Front-end \& DevOps)}{Shiraz, Iran}
-		\item Directed front-end architecture of a large-scale \textbf{CRM application}, translating complex business logic into responsive, modular user interfaces.
-		\item Established and maintained engineering \textbf{code quality guidelines}, raising test coverage and streamlining team-wide code reviews.
-		\item Automated containerized environments and staging pipelines using \textbf{Docker} and \textbf{GitHub Actions}, reducing deployment times by \textbf{70\%}.
-        \\ \chip{Flutter} \chip{GetX} \chip{Hive} \chip{OpenStreetMaps} \chip{Firebase} \chip{Docker}
-	\end{rSubsection}
-
-	\begin{rSubsection}{Chartix}{2022 - 2023}{Software Developer}{Shiraz, Iran}
-		\item Shipped multi-platform \textbf{financial applications} (Web/Android), high-frequency automation bots, and a custom logging pipeline to monitor system health.
-		\item Refactored application layers and integrated a \textbf{Redis-based caching layer}, significantly improving data retrieval latency and modularity.
-        \\ \chip{Flutter} \chip{Python} \chip{BloC} \chip{Hive} \chip{Socket} \chip{Redis} \chip{TelegramAPI}
-	\end{rSubsection}
-
-	\begin{rSubsection}{FepCo}{2021 - 2022}{Junior Front-end Developer}{Shiraz, Iran}
-		\item Developed modular components for a large-scale enterprise \textbf{ERP software} using Flutter/Dart within an \textbf{Agile/Scrum} environment.
-		\item Implemented Clean Code, state management, and \textbf{Domain-Driven Design (DDD)} principles to ensure a maintainable codebase.
-        \\ \chip{Flutter} \chip{Dart} \chip{GetX} \chip{Clean Code} \chip{DDD} \chip{Scrum}
-	\end{rSubsection}
-
-	\begin{rSubsection}{Diakoo}{2019 - 2020}{System Administrator}{Shiraz, Iran}
-		\item Configured and optimized \textbf{Linux/Windows server} environments hosting Java-based enterprise applications, and managed VoIP systems.
-		\item Partnered with software developers to deploy a secure \textbf{video streaming service} featuring token-based access control.
-        \\ \chip{Linux} \chip{Windows Server} \chip{VoIP} \chip{Bash} \chip{Java} \chip{Video Streaming}
-	\end{rSubsection}
-
-	\begin{rSubsection}{IT Support \& Network Services}{2014 - 2019}{Hardware Technician \& Network Administrator}{Shiraz, Iran}
-		\item Deployed local network infrastructures, configured active switches/routers, and performed component-level hardware diagnostics and motherboard repairs.
-        \\ \chip{Hardware Diagnostics} \chip{Component Repair} \chip{Network Configuration} \chip{Troubleshooting}
-	\end{rSubsection}
-%------------------------------------------------
-\end{rSection}
 
 %----------------------------------------------------------------------------------------
 %	EDUCATION SECTION
 %----------------------------------------------------------------------------------------
 \begin{rSection}{Education}
-	\textbf{Islamic Azad University} \hfill Bachelor's Degree in Computer Software Technology \& Engineering \hfill \textit{2018} \\
-	\textbf{Arak University of Technology} \hfill Undergraduate Degree in Electrical Power Transmission \& Installation \hfill \textit{2015}
+	\hypertarget{education}{}
+	\smallskip
+	\textbf{Islamic Azad University} \hfill \textit{2018} \\ 
+	Bachelor's Degree in Computer Software Technology \& Engineering \\
+	\smallskip
+    \textbf{Arak University of Technology} \hfill \textit{2015} \\ 
+	Undergraduate Degree in Electrical Power Transmission / Installation
 \end{rSection}
 
 \end{document}

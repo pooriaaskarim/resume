@@ -53,8 +53,8 @@
 
 \usepackage{geometry} % Required for adjusting page dimensions and margins
 \geometry{
-	top=36pt,    % Symmetric top margin (header is body content, not fancyhdr)
-	bottom=36pt,
+	top=32pt,    % Symmetric top margin (header is body content, not fancyhdr)
+	bottom=32pt,
 	left=48pt,
 	right=48pt,
 	nohead,      % No space reserved for header on any page
@@ -176,10 +176,7 @@
 	\hrule % Horizontal rule
 	\begin{list}{}{ % List to indent the entire content of the section
 		\setlength{\leftmargin}{12pt}
-		\setlength{\topsep}{0pt}
-		\setlength{\partopsep}{0pt}
-		\setlength{\parsep}{0pt}
-		\setlength{\itemsep}{0pt}
+		% \setlength{\rightmargin}{8pt}
 	}
  
 	\item[] % Empty list item to enable indentation
@@ -200,12 +197,8 @@
 	\vskip 1pt % Vertical whitespace
 	\begin{list}
         {$\pdot$}
-        {\leftmargin=16pt
-         \setlength{\itemsep}{-0.5em}
-         \setlength{\topsep}{0pt}
-         \setlength{\partopsep}{0pt}
-         \setlength{\parsep}{0pt}
-         \vspace{-0.5em}}
+        {\leftmargin=16pt}
+		      \setlength{\itemsep}{-0.5em} \vspace{-0.5em} % Reduce vertical spacing between items in the list for a tighter look
     }{  
 	   \end{list}
 	   \vskip 1pt % Vertical whitespace after the end of the list  
