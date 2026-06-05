@@ -50,12 +50,20 @@ Another weekend project thas started as a fun side project to learn about music 
 
 ---
 
-## About this Repo: How it's Built and How things Works
+## Repository Architecture & Automated Build Pipeline
 
-The resume is written in LaTeX using a custom document class ([`resume.cls`](resume/resume.cls)) — not a template. Layout decisions include TikZ-rendered skill chips, a body-embedded letterhead (no `fancyhdr`), and Roboto loaded via a local `texmf` tree for consistent rendering across environments.
+This repository serves as a self-compiling resume workspace, utilizing LaTeX for layout design and GitHub Actions for continuous integration.
 
-Every push to `master` that touches `resume/` triggers a three-stage GitHub Actions pipeline: a versioning job generates a date-stamped tag, a rendering job compiles the `.tex` source with `pdflatex`, and a release job publishes the PDF — so the download link above always points to the latest compiled version.
+### Document Design & Layout
+Unlike standard resumes built on pre-existing templates, this document is configured using a custom document class ([`resume.cls`](resume/resume.cls)). Layout decisions include:
+- **Custom Geometry**: Body-embedded letterhead design avoiding complex `fancyhdr` margins and rendering issues.
+- **Visual Profiling**: Clean, TikZ-rendered skill chips to structure technical proficiencies.
+- **Environment Parity**: The Roboto font family is loaded via a local `texmf` tree, ensuring reproducible compilations across local development and CI environments.
 
-The source is in [`resume/resume.tex`](resume/resume.tex) if you want to see how it's structured.
+The resume's structure and content are defined in [`resume/resume.tex`](resume/resume.tex).
 
----
+### CI/CD Deployment Workflow
+Every commit pushed to the `master` branch targeting the `resume/` directory triggers an automated GitHub Actions pipeline:
+1. **Versioning**: Generates a timestamped version identifier.
+2. **Compilation**: Compiles the LaTeX sources using `pdflatex` to produce a high-fidelity PDF.
+3. **Release**: Deploys the generated PDF to GitHub Releases, ensuring the download link always serves the latest build.
