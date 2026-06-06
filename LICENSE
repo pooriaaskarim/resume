@@ -1,0 +1,37 @@
+# Licensing Terms
+
+This repository uses a split-licensing model to distinguish between reusable code/templates and personal biographical content:
+
+## 1. Resume Code & Templates (MIT License)
+
+All software code, custom LaTeX classes (specifically `resume.cls`), GitHub Actions workflow configurations (`.github/workflows/`), and project build scripts in this repository are licensed under the MIT License:
+
+Copyright (c) 2026 Pooria Askari Moqaddam
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+## 2. Personal Content & Biography (CC BY-NC-ND 4.0)
+
+All personal biographical content, work history description, contact details, education data, and other text housed within `resume/resume.tex` (as well as any compiled PDF output of the resume) are licensed under the Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License:
+
+- **Attribution:** You must give appropriate credit.
+- **Non-Commercial:** You may not use the material for commercial purposes.
+- **No Derivatives:** If you remix, transform, or build upon the material, you may not distribute the modified material.
+
+To view a copy of this license, visit [http://creativecommons.org/licenses/by-nc-nd/4.0/](http://creativecommons.org/licenses/by-nc-nd/4.0/).

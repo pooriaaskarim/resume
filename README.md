@@ -55,7 +55,7 @@ Another weekend project thas started as a fun side project to learn about music 
 This repository serves as a self-compiling resume workspace, utilizing LaTeX for layout design and GitHub Actions for continuous integration.
 
 ### Document Design & Layout
-Unlike standard resumes built on pre-existing templates, this document is configured using a custom document class ([`resume.cls`](resume/resume.cls)). Layout decisions include:
+This document is configured using a custom document class ([`resume.cls`](resume/resume.cls)). Layout decisions include:
 - **Custom Geometry**: Body-embedded letterhead design avoiding complex `fancyhdr` margins and rendering issues.
 - **Visual Profiling**: Clean, TikZ-rendered skill chips to structure technical proficiencies.
 - **Environment Parity**: The Roboto font family is loaded via a local `texmf` tree, ensuring reproducible compilations across local development and CI environments.
@@ -67,3 +67,12 @@ Every commit pushed to the `master` branch targeting the `resume/` directory tri
 1. **Versioning**: Generates a timestamped version identifier.
 2. **Compilation**: Compiles the LaTeX sources using `pdflatex` to produce a high-fidelity PDF.
 3. **Release**: Deploys the generated PDF to GitHub Releases, ensuring the download link always serves the latest build.
+
+---
+
+## License
+
+This repository is licensed under a split-licensing model:
+*   **Code & Templates** (`resume.cls`, workflows, configurations) are licensed under the **[MIT License](LICENSE)**.
+*   **Personal Biographical Content** (`resume.tex`, compiled PDF) is licensed under the **[CC BY-NC-ND 4.0](LICENSE)** (Creative Commons Attribution-NonCommercial-NoDerivatives) License.
+
