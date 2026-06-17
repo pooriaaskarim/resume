@@ -20,6 +20,7 @@
 
 [![Render LaTeX Resume](https://github.com/pooriaaskarim/resume/actions/workflows/render.yml/badge.svg)](https://github.com/pooriaaskarim/resume/actions/workflows/render.yml)
 [![Latest Release](https://img.shields.io/github/v/release/pooriaaskarim/resume?label=latest&style=flat-square)](https://github.com/pooriaaskarim/resume/releases/latest)
+[![License: MIT + CC BY-NC-ND](https://img.shields.io/badge/License-MIT%20%2B%20CC%20BY--NC--ND-blue?style=flat-square)](LICENSE)
 
 **[→ Download PDF](https://github.com/pooriaaskarim/resume/releases/latest/download/PooriaAskariMoqaddam.resume.pdf)**
 
@@ -34,18 +35,18 @@ I have been working on a set of tools as contributions to the community of Dart 
 [![Pub Points](https://img.shields.io/pub/points/logd?style=flat-square)](https://pub.dev/packages/logd)
 [![Pub Likes](https://img.shields.io/pub/likes/logd?style=flat-square)](https://pub.dev/packages/logd)
 
-A hierarchical logging engine for Dart/Flutter. Loggers live in a dot-separated tree and inherit configuration lazily — with version-based cache invalidation, atomic multi-line buffering, and a fail-safe internal pipeline that keeps logging errors from surfacing as application crashes.
+A hierarchical logging engine for Dart/Flutter. Loggers live in a dot-separated tree and inherit configuration lazily — with version-based cache invalidation, atomic multi-line buffering, and a [...]
 
 ### [Flutter Notification Queue](https://github.com/pooriaaskarim/flutter_notification_queue)
 [![pub.dev](https://img.shields.io/pub/v/flutter_notification_queue?style=flat-square&logo=dart&label=pub.dev)](https://pub.dev/packages/flutter_notification_queue)
 [![Pub Points](https://img.shields.io/pub/points/flutter_notification_queue?style=flat-square)](https://pub.dev/packages/flutter_notification_queue)
 [![Pub Likes](https://img.shields.io/pub/likes/flutter_notification_queue?style=flat-square)](https://pub.dev/packages/flutter_notification_queue)
 
-An overlay-based notification system for Flutter. Manages notifications as stateful, interactive entities through a channel-based queue with 8 positional slots, drag-to-relocate, backpressure handling, and smooth gesture interactions.
+An overlay-based notification system for Flutter. Manages notifications as stateful, interactive entities through a channel-based queue with 8 positional slots, drag-to-relocate, backpressure hand[...]
 
 
 ### [SarvMD](https://github.com/pooriaaskarim/sarvmd) *(in development)*
-Another weekend project thas started as a fun side project to learn about music engraving. It is a zero-dependency vector engraving engine for sheet music, built in Dart. Physical page coordinates, Gouldian spacing, and a custom notation AST — no external typesetting dependencies.
+Another weekend project thas started as a fun side project to learn about music engraving. It is a zero-dependency vector engraving engine for sheet music, built in Dart. Physical page coordinates[...]
 
 
 ---
@@ -70,9 +71,31 @@ Every commit pushed to the `master` branch targeting the `resume/` directory tri
 
 ---
 
+## Use This as a Template
+
+This repository demonstrates professional resume engineering with LaTeX, GitHub Actions, and automated deployment. The modular design makes it easy to adapt for your own resume:
+
+### Getting Started
+1. **Fork** this repository or clone it as a template
+2. **Customize** [`resume/resume.tex`](resume/resume.tex) with your content
+3. **Adjust** [`resume/resume.cls`](resume/resume.cls) for your design preferences
+4. **Commit** to `master` — GitHub Actions will automatically render and release your PDF
+
+### Key Files
+- **`resume.cls`** — Custom LaTeX document class with TikZ skill badges (MIT License)
+- **`resume.tex`** — Your resume content (modify this)
+- **`.github/workflows/render.yml`** — Automated PDF compilation and release pipeline
+
+### Features
+- ✅ Automated PDF rendering on every commit
+- ✅ Always-current download link via GitHub Releases
+- ✅ Reproducible builds with local `texmf` environment
+- ✅ Split licensing: template code (MIT) + personal content (CC BY-NC-ND)
+
+---
+
 ## License
 
 This repository is licensed under a split-licensing model:
 *   **Code & Templates** (`resume.cls`, workflows, configurations) are licensed under the **[MIT License](LICENSE)**.
 *   **Personal Biographical Content** (`resume.tex`, compiled PDF) is licensed under the **[CC BY-NC-ND 4.0](LICENSE)** (Creative Commons Attribution-NonCommercial-NoDerivatives) License.
-
