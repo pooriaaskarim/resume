@@ -46,7 +46,12 @@ An overlay-based notification system for Flutter. Manages notifications as state
 
 
 ### [SarvMD](https://github.com/pooriaaskarim/sarvmd) *(in development)*
-Another weekend project thas started as a fun side project to learn about music engraving. It is a zero-dependency vector engraving engine for sheet music, built in Dart. Physical page coordinates[...]
+<p align="left">
+  <a href="https://pooriaaskarim.github.io/sarvmd/">
+    <img src="https://img.shields.io/badge/Try%20SarvMD-Live%20Web%20App-6C5CE7?style=for-the-badge&logo=flutter" alt="Try SarvMD Live Web App">
+  </a>
+</p>
+A weekend project that started as a fun side project to learn about music engraving. It is a zero-dependency vector engraving engine for sheet music, built in Dart. Physical page coordinates[...]
 
 
 ---
