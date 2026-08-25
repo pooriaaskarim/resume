@@ -53,8 +53,8 @@
 
 \usepackage{geometry} % Required for adjusting page dimensions and margins
 \geometry{
-	top=32pt,    % Symmetric top margin (header is body content, not fancyhdr)
-	bottom=32pt,
+	top=24pt,    % Symmetric top margin (header is body content, not fancyhdr)
+	bottom=24pt,
 	left=48pt,
 	right=48pt,
 	nohead,      % No space reserved for header on any page
@@ -170,9 +170,9 @@
 
 % Defines the rSection environment for the major sections within the CV
 \newenvironment{rSection}[1]{ % The single parameter is for the section title
-	\vskip 2pt % Vertical whitespace
+	\vskip 1pt % Vertical whitespace
 	\MakeUppercase{\textbf{#1}} % Section title
-	\vskip 2pt % Vertical whitespace
+	\vskip 1pt % Vertical whitespace
 	\hrule % Horizontal rule
 	\begin{list}{}{ % List to indent the entire content of the section
 		\setlength{\leftmargin}{12pt}
@@ -198,8 +198,8 @@
 	\begin{list}
         {$\pdot$}
         {\leftmargin=16pt}
-		      \setlength{\itemsep}{-0.5em} \vspace{-0.5em} % Reduce vertical spacing between items in the list for a tighter look
+		      \setlength{\itemsep}{-0.6em} \vspace{-0.6em} % Reduce vertical spacing between items in the list for a tighter look
     }{  
 	   \end{list}
-	   \vskip 1pt % Vertical whitespace after the end of the list  
+	   \vskip 0pt % Vertical whitespace after the end of the list  
     }

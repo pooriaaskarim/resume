@@ -56,10 +56,11 @@ I am a cross-platform developer with a strong inclination toward systems thinkin
 \smallskip
 My \hyperlink{experience}{\textbf{professional work}} spans roughly five years in software---real-time financial data systems, CRM applications, large-scale ERP platforms, and Linux infrastructure. Before that, I spent several years as a hardware technician and network administrator: component-level diagnostics and repairs, local network deployment, and server provisioning. That background still informs how I think about software.
 
-In parallel, I have been building \hyperlink{opensource}{\textbf{open source developer tooling}} — both projects accumulated over years of real engineering work before taking their current shape:
+In parallel, I have been building \hyperlink{opensource}{\textbf{open source developer tooling}}---projects accumulated over years of real engineering work before taking their current shape:
 \begin{list}{$\pdot$}{\leftmargin=12pt \itemsep=0.1em \parsep=0pt \topsep=2pt}
-    \item \textbf{Logd} --- a hierarchical logging engine for Dart/Flutter. Loggers are organized in a dot-separated tree with lazy config resolution, version-based cache invalidation, and atomic multi-line buffering. A fail-safe internal pipeline ensures logging failures are never surfaced as application errors.
+    \item \textbf{Logd} --- a hierarchical logging engine for Dart/Flutter. Loggers are organized in a dot-separated tree with lazy config resolution, version-based cache invalidation, and much more.
     \item \textbf{Flutter Notification Queue} --- a full overlay-based notification system for Flutter. Manages notifications as stateful, interactive entities through a channel-based queue architecture with 8 positional slots, drag-to-relocate, backpressure handling, and smooth gesture interactions.
+    \item \textbf{SarvMD} --- a blank-canvas sheet music manuscript designer for Flutter. Built on a zero-dependency Dart engraving engine with a hierarchical system layout tree and physical page coordinates; live preview available online.
 \end{list}
 
 A full breakdown of my \hyperlink{skills}{\textbf{technical skills}} follows directly below, with \hyperlink{education}{\textbf{academic background}} at the end---the latter spanning electrical engineering and computer science, a combination that largely explains the rest of this document.
@@ -99,32 +100,30 @@ A full breakdown of my \hyperlink{skills}{\textbf{technical skills}} follows dir
 
 \begin{rSection}{Professional Experience}
 \hypertarget{experience}{}
-\smallskip
 %------------------------------------------------
     \begin{rSubsection}{Rahandaaz}{2024 - 2025}{Software Developer}{Shiraz, Iran}
-		\item Led a cross-functional team of developers, designers, and business stakeholders, translating complex requirements into modular domain architectures using \textbf{Domain-Driven Design (DDD)} principles.
+		\item Led a cross-functional team of developers and designers, translating complex requirements into modular architectures using \textbf{Domain-Driven Design (DDD)}.
 		\item Redesigned codebase architecture and developer workflows to resolve cross-team communication bottlenecks, aligning product UX designs with engineering practices.
-        \\ \chip{Flutter} \chip{GetX} \chip{Hive} \chip{Kotlin} \chip{DDD} \chip{Figma} \chip{Firebase} \chip{Agile/Scrum}
+        \\ \chip{Flutter} \chip{GetX} \chip{Hive} \chip{Kotlin} \chip{DDD} \chip{Firebase} \chip{Agile/Scrum}
 	\end{rSubsection}
 
 	\begin{rSubsection}{Didehban Tejarat}{2023 - 2024}{Front-end Developer}{Shiraz, Iran}
 		\item Led front-end development of a \textbf{CRM application}, collaborating with cross-functional product teams to deliver \textbf{responsive interfaces} and localized components.
 		\item Developed and maintained inter-team \textbf{code quality guidelines} to streamline onboarding and code reviews.
-		\item Automated containerized staging environments and deployment pipelines using \textbf{Docker} and \textbf{GitHub Actions} workflows, streamlining release cycles and eliminating manual configuration.
+		\item Automated containerized staging environments and deployment pipelines using \textbf{Docker} and \textbf{GitHub Actions}, eliminating manual configuration.
         \\ \chip{Flutter} \chip{GetX} \chip{Hive} \chip{OpenStreetMaps} \chip{Firebase} \chip{Docker}
 	\end{rSubsection}
 
 	\begin{rSubsection}{Chartix}{2022 - 2023}{Software Developer}{Shiraz, Iran}
 		\item Developed the client-side ecosystem, engineering a native \textbf{Android application}, a responsive \textbf{PWA}, and an interactive \textbf{Telegram Bot} to unify access to financial services.
-		\item Engineered a reliable data collection and caching pipeline utilizing \textbf{Redis}, implementing service health monitoring to ensure high availability and prevent data loss during high-volume market activity.
-		\item Optimized UI state-management and rendering layers in Flutter to achieve \textbf{high-FPS chart interactions} (zooming, panning) and eliminate UI thread blocking from high-frequency WebSocket ticks.
-        \\ \chip{Flutter} \chip{Python} \chip{BloC} \chip{Hive} \chip{Socket} \chip{Redis} \chip{TelegramAPI}
+		\item Engineered a reliable data collection and caching pipeline using \textbf{Redis}, implementing health monitoring to ensure high availability during peak market activity.
+		\item Optimized UI rendering in Flutter to achieve \textbf{high-FPS chart interactions} (zooming, panning) and eliminate UI thread blocking from WebSocket ticks.
+        \\ \chip{Flutter} \chip{Python} \chip{BLoC} \chip{Hive} \chip{Redis} \chip{TelegramAPI}
 	\end{rSubsection}
 
 	\begin{rSubsection}{FepCo}{2021 - 2022}{Junior Front-end Developer}{Shiraz, Iran}
 		\item Practiced \textbf{Agile/Scrum} methodologies in a collaborative environment, developing a modular, large-scale \textbf{ERP software}.
-		\item Developed proficiency in \textbf{Dart} and \textbf{Flutter} architectures, implementing \textbf{Clean Code}, \textbf{Domain-Driven Design (DDD)} principles, \textbf{state/route management}, and \textbf{localization}.
-		\item Collaborated with design teams on \textbf{UI/UX workflows} to optimize user experience and layout fidelity.
+		\item Built modular \textbf{Dart} and \textbf{Flutter} architectures implementing \textbf{Clean Code}, \textbf{DDD} principles, \textbf{state/route management}, and \textbf{UI/UX workflows}.
         \\ \chip{Flutter} \chip{Dart} \chip{GetX} \chip{Clean Code} \chip{DDD} \chip{Scrum} \chip{UI/UX}
 	\end{rSubsection}
 
@@ -132,8 +131,8 @@ A full breakdown of my \hyperlink{skills}{\textbf{technical skills}} follows dir
 	\begin{rSubsection}{Diakoo}{2019 - 2020}{System Administrator}{Shiraz, Iran}
 		\item Configured and maintained \textbf{Linux/Windows server} environments optimized for hosting \textbf{Java-based} enterprise applications.
 		\item Provisioned and maintained \textbf{VoIP} telecommunication servers and directory services.
-		\item Collaborated with developers to design and implement a secure \textbf{video streaming service} with token-based access control and download protection.
-        \\ \chip{Linux} \chip{Windows Server} \chip{VoIP} \chip{Bash} \chip{Systems Administration} \chip{Java} \chip{Video Streaming}
+		\item Collaborated with developers to implement a secure \textbf{video streaming service} with token-based access control.
+        \\ \chip{Linux} \chip{Windows Server} \chip{VoIP} \chip{Bash} \chip{Java} \chip{Video Streaming}
 	\end{rSubsection}
 
 	\begin{rSubsection}{IT Support \& Network Services}{2014 - 2019}{Hardware Technician \& Network Administrator}{Shiraz, Iran}
@@ -150,37 +149,37 @@ A full breakdown of my \hyperlink{skills}{\textbf{technical skills}} follows dir
 %	OPEN SOURCE PROJECTS SECTION
 %----------------------------------------------------------------------------------------
 
+\newpage
+
 \begin{rSection}{Open Source Projects}
 \hypertarget{opensource}{}
-\smallskip
 %------------------------------------------------
     \begin{rSubsection}{Logd}{2025 - Present}{Creator}{BSD 3-Clause 
 		\\ {\footnotesize\textcolor{bluegray}{\faGithubAlt~\href{https://github.com/pooriaaskarim/logd}{pooriaaskarim/logd} $\cdot$ \faCube~\href{https://pub.dev/packages/logd}{pub.dev/packages/logd}}}}
-		\item[] {\small\textit{A Dart/Flutter logging library built on the conviction that log records are structured data, deserving a proper IR, a real layout engine, and zero pressure on the garbage collector.}}
-		\item Modeled the logging pipeline as a two-stage system: a semantic IR (\textbf{LogDocument}) that captures structure, followed by a physical layout pass (\textbf{TerminalLayout}) that resolves cell-aware multi-line alignment before any output is written.
-		\item Designed a \textbf{LIFO object pool} (Arena) covering all IR node types and native memory buffers---eliminating per-log allocations and GC churn under high-frequency streams.
-		\item Implemented a \textbf{hybrid execution mode}: Object Mode preserves the full decorator pipeline via tree traversal; Streaming Mode writes directly to native Binary IR buffers for a measured 20$\times$ throughput gain.
-		\item Integrated \textbf{Dart FFI} to dispatch serialized Binary IR packets to a background isolate, with backpressure capping at 200 in-flight packets and a 128\,MB native memory ceiling.
-        \\ \chip{Semantic IR} \chip{Arena Object Pool} \chip{Binary IR / FFI} \chip{Hybrid Rendering} \chip{Terminal Layout Engine}
+		\item[] {\small\textit{A structured logging library for Dart/Flutter. Loggers are organized in a configurable hierarchy, log records are treated as formatted data rather than raw strings, and output is offloaded to a background thread---so logging never competes with the application.}}
+		\item Organized loggers in a \textbf{dot-separated hierarchy} with lazy config inheritance---changes to a parent propagate automatically to all descendants, without manual cache invalidation.
+		\item Separated \textbf{formatting from rendering}: log records are structured into a semantic document first, then laid out for the target output surface (terminal, file, JSON)---switching targets requires no changes at the call site.
+		\item Offloaded all output to a \textbf{background isolate via Dart FFI}, with built-in backpressure---ensuring the logging pipeline never blocks the application's main thread under load.
+		\item Shipped as an \textbf{ecosystem of satellite packages}: \texttt{logd\_sqlite} (SQLite storage), \texttt{logd\_network} (HTTP batching \& live dashboard), and \texttt{logd\_linters} (static analysis)---each independently adoptable.
+        \\ \chip{Hierarchical Config} \chip{Structured Logging} \chip{Background Isolate / FFI} \chip{Zero-GC Rendering} \chip{Terminal Layout Engine}
 	\end{rSubsection}
 
     \begin{rSubsection}{Flutter Notification Queue}{2025 - Present}{Creator}{BSD 3-Clause 
 		\\{\footnotesize\textcolor{bluegray}{\faGithubAlt~\href{https://github.com/pooriaaskarim/flutter_notification_queue}{pooriaaskarim/flutter\_notification\_queue} $\cdot$ \faCube~\href{https://pub.dev/packages/flutter_notification_queue}{pub.dev/packages/flutter\_notification\_queue}}}}
-		\item[] {\small\textit{A Flutter overlay system built on the premise that notifications are live agents---capable of competing for priority, responding to gestures, and yielding under backpressure---not ephemeral banners.}}
-		\item Architected a \textbf{QueueCoordinator} as the lifecycle bridge between logical queue operations and Flutter's \texttt{OverlayPortal}, using a startup-mailbox pattern to handle pre-mount enqueue requests without race conditions.
-		\item Implemented a \textbf{modular gesture FSM} where each interaction (drag-to-dismiss, drag-to-relocate, reorder) is an independent plugin, routed by state machine rather than nested conditional logic.
-		\item Exposed a \textbf{broadcast event stream} (queued, dismissed, relocated, reordered, overflowed) that decouples observers from library internals and supports multiple simultaneous listeners.
-		\item Built queue overflow as a \textbf{first-class event} rather than a silent drop---backpressure propagates to the caller, keeping the notification lifecycle fully observable.
-        \\ \chip{FSM Gesture Engine} \chip{OverlayPortal} \chip{Reactive Event Bus} \chip{Backpressure} \chip{Deterministic Testing}
+		\item[] {\small\textit{A Flutter library for managing multiple notification overlays simultaneously---with priority-based scheduling, gesture interactions, and a fully observable lifecycle---for applications that need more than a single ephemeral banner.}}
+		\item Supported \textbf{independent overlay queues at 9 screen positions}, each with priority scheduling and automatic overflow handling---replacing ad-hoc overlay stacks.
+		\item Made every user interaction---drag-to-dismiss, drag-to-relocate, and stack reordering---a \textbf{self-contained gesture plugin}, routed declaratively so each behavior is independently configurable and testable.
+		\item Exposed the complete notification lifecycle (enqueued, dismissed, relocated, overflowed) as a \textbf{typed event stream}---giving the host application full observability without coupling to library internals.
+        \\ \chip{Multi-Queue Overlay} \chip{Priority Scheduling} \chip{FSM Gesture Engine} \chip{Reactive Event Bus} \chip{Backpressure}
 	\end{rSubsection}
 
-    % \begin{rSubsection}{SarvMD}{2026 - Present}{Creator}{BUSL-1.1 \enspace {\footnotesize\textcolor{bluegray}{\faGithubAlt~\href{https://github.com/pooriaaskarim/sarvmd}{pooriaaskarim/sarvmd}}}}
-	% 	\item Architected a zero-dependency \textbf{vector engraving engine} in Dart for a blank-canvas sheet music editor.
-	% 	\item Implemented dynamic \textbf{page-layout calculations} and system indentation rules conforming to standard sheet music engraving conventions.
-	% 	\item Designed an interactive editor UI using \textbf{custom-painted canvas} components and reactive state management.
-	% 	\item Built vector export modules (\textbf{SVG/PDF}) and visual alignment guides to verify document layouts.
-    %     \\ \chip{Vector Layout Engine} \chip{Gouldian Engraving} \chip{SVG/PDF Exporters} \chip{State Management} \chip{Custom Canvas}
-	% \end{rSubsection}
+    \begin{rSubsection}{SarvMD}{2026 - Present}{Creator}{BUSL-1.1
+		\\ {\footnotesize\textcolor{bluegray}{\faGithubAlt~\href{https://github.com/pooriaaskarim/sarvmd}{pooriaaskarim/sarvmd} $\cdot$ \faDesktop~\href{https://pooriaaskarim.github.io/sarvmd}{Live Preview}}}}
+		\item[] {\small\textit{A blank-canvas sheet music designer for Flutter---typographical precision and print fidelity over playback.}}
+		\item Built a \textbf{zero-dependency Dart engraving engine} with a hierarchical \textbf{SystemLayout} tree: arbitrary N-staff ensembles, physical page coordinates, and MOLA-compliant grouping.
+		\item Implemented \textbf{SVG/PDF vector export} with 1:1 real-world parity between screen and print, backed by a high-precision physical calibration system.
+        \\ \chip{Native Engraving Engine} \chip{SystemLayout Tree} \chip{SVG/PDF Export} \chip{Physical Calibration}
+	\end{rSubsection}
 %------------------------------------------------
 \end{rSection}
 
@@ -191,10 +190,8 @@ A full breakdown of my \hyperlink{skills}{\textbf{technical skills}} follows dir
 %----------------------------------------------------------------------------------------
 \begin{rSection}{Education}
 	\hypertarget{education}{}
-	\smallskip
 	\textbf{Islamic Azad University} \hfill \textit{2018} \\ 
-	Bachelor's Degree in Computer Software Technology \& Engineering \\
-	\smallskip
+	Bachelor's Degree in Computer Software Technology \& Engineering \\[2pt]
     \textbf{Arak University of Technology} \hfill \textit{2015} \\ 
 	Undergraduate Degree in Electrical Power Transmission / Installation
 \end{rSection}
